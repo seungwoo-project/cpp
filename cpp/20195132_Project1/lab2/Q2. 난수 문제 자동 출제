@@ -1,0 +1,44 @@
+#include <iostream>
+#include <random>
+using namespace std;
+
+int main() {
+	char x;
+	int answer;
+	int guess;
+	random_device rd;
+	mt19937 ran(rd());
+	mt19937 ran1(rd());
+	uniform_int_distribution<> num(1, 9);
+	int a = num(ran);
+	int b = num(ran1);
+	cout << "산수 문제를 자동으로 출제합니다." << endl;
+	cout << a << " " << b << endl;
+	cout << "연산자 입력하기(+, -, *, /)" << endl;
+	cin >> x;
+	switch (x)
+	{
+	case '+':
+		answer=a + b;
+		break;
+	case '-':
+		answer = a - b;
+		break;
+	case '*':
+		answer = a * b;
+		break;
+	case '/':
+		answer = a / b;
+		break;
+	defalut :
+		break;
+	}
+
+	cout << "결과 입력하기" << endl;
+	cin >> guess;
+	if (guess == answer)
+		cout << "맞았습니다" << endl;
+	else
+		cout << "틀렸습니다" << endl;
+	return 0;
+}

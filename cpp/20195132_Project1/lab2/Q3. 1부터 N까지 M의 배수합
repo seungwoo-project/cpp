@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int n, m;
+	int sum = 0;
+	cin >> n >> m;
+	cout << "N 값은 " << n << ", " << "M 값은 " << m << endl;
+
+	for (int i = m; i <= n; i++) {
+		if (i % m == 0)
+			sum = sum + i;
+	}
+	cout << sum << endl;
+	return 0;
+}
